@@ -1,0 +1,736 @@
+@charset "utf-8";
+@import url("normalize.css");
+@import url("fonts.css");
+/* 초기화 스타일 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* 숨김 콘텐츠 */
+legend,
+.a11y-hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+/* ClearFix */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/* 반응형 콘텐츠 */
+.responsive{
+    max-width: 100%;
+    height: auto;
+}
+/* 기본 스타일 */
+html {
+  font-size: 10px;
+}
+body {
+  color: #181818;
+  font-family: "Noto Sans Regular", sans-serif;
+}
+/* 그리드 시스템 */
+/* .container {
+  position: relative;
+}
+.container-act::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+  180deg,
+  hsla(210, 70%, 50%, 0.35),
+  hsla(210, 70%, 50%, 0.35) 1px,
+  transparent 1px,
+  transparent 16px
+);
+  z-index: 100;
+}
+.grid-act {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-column-gap: 20px;
+
+} */
+/* .grid::before,
+.grid::after {
+  content: "";
+} */
+/* .grid-unit {
+  background: hsla(0, 70%, 50%, 0.25);
+} */
+/* 헤더, 콘텐츠, 푸터 Gutter */
+.header-container,
+.content-container,
+.footer-container {
+  padding: 0 20px;
+}
+/* 메인 콘텐츠 섹션 제목 공통 */
+.main-section-heading {
+  background-image: url("images/sprite_main.png");
+  background-repeat: no-repeat;
+  margin: 1.5em 0 1em;
+  min-height: 60px;
+  padding: 5px 0 0 65px;
+}
+.en-heading {
+  display: block;
+}
+/* 메인 콘텐츠 단락 공통 */
+.main [class$="-summary"] {
+  line-height: 2;
+  margin: 1.5em 0;
+}
+/* 메인 콘텐츠 섹션 제목 공통 */
+/* 추천서적 제목 공통 */
+.recommend-book-heading {
+  background-position: 0 0;
+}
+.recommend-book-heading .en-heading {
+  color: #abd375;
+}
+/* 추천서적 커버이미지 공통 */
+.recommend-book-cover {
+  width: 75%;
+  margin: 1em auto;
+  text-align: center;
+}
+.recommend-book-cover img {
+  max-width: 100%;
+  height: auto;
+}
+/* 추천서적 저자 및 평점 공통 */
+.recommend-book-detail {
+  text-align: center;
+  margin: 1em 0;
+}
+.recommend-book-author,
+.recommend-book-author-name {
+  display: inline-block;
+}
+/* 추천서적 평점 공통 */
+.recommend-book-grade {
+  color: #abd375;
+  font-size: 2em;
+}
+/* 새소식 제목 공통 */
+.news-heading {
+  background-position: 0 -230px;
+}
+.news-heading .en-heading {
+  color: #e8ca58;
+}
+/* 새소식 동영상 공통 */
+.news-container {
+  margin: 1em 0;
+}
+.news-video {
+  max-width: 100%;
+  height: auto;
+}
+/* 새소식 날짜 정보 공통 */
+.news-date {
+  display: block;
+  text-align: right;
+}
+/* 게시판 제목 공통 */
+.board-heading {
+  background-position: 0 -115px;
+  margin-bottom: 1.5em;
+}
+.board-heading .en-heading {
+  color: #c7b39a;
+}
+/* 게시판 목록 공통 */
+.board-list li {
+  margin-bottom: 1.1em;
+}
+.board-list li:first-child{
+  margin-top: 2.5em;
+}
+.icon-star::before{
+  position: relative;
+  top: 0.05em;
+}
+.board-list a,
+.board-list time {
+  vertical-align: middle;
+}
+.board-list a {
+  display: inline-block;
+  width: calc(100% - 8em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.board-more {
+  position: absolute;
+  top: 1.5em;
+  right: -0.5em;
+  padding: 0.5em;
+}
+.board-more::before {
+  color: #abd375;
+}
+/* 인기 사이트 제목 공통 */
+.favorite-site-heading {
+  background-position: 0 -345px;
+  margin-bottom: 1.5em;
+}
+.favorite-site-heading .en-heading {
+  color: #eea60a;
+}
+/* 인기 사이트 목록 공통 */
+.favorite-site-list {
+  overflow: hidden;
+}
+.favorite-site-list li {
+  counter-increment: number;
+  margin: 1.5em 0;
+}
+.favorite-site-list li::before {
+  content: counter(number, decimal);
+  background: #eea60a;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+}
+/* 트위터 제목 공통 */
+.twitter-heading {
+  background-position: 0 -460px;
+  margin-bottom: 1.75em;
+}
+.twitter-heading .en-heading {
+  color: #6aaee6;
+}
+/* 트위터 사용자 정보 공통 */
+.twitter-user-info {
+  float: left;
+  margin-bottom: 1em;
+  width: calc(100% - 150px);
+}
+.twitter-user-name,
+.twitter-user-id {
+  float: left;
+}
+.twitter-user-name {
+  color: #6aaee6;
+}
+.twitter-user-id {
+  font-family: "Noto Sans Bold";
+}
+/* 트위터 사용자 프로필 이미지 공통 */
+.twitter-profile {
+  float: right;
+  margin: 0 0 0.5em 1em;
+}
+.twitter-thumbnail {
+  border-radius: 50%;
+  padding: 0.5em;
+  border: 1px solid #333;
+}
+/* 트위터 게시물 날짜 공통 */
+.twitter-date {
+  display: block;
+  clear: both;
+  text-align: right;
+}
+
+/* 푸터 공통 */
+.footer {
+  background-color: #988574;
+  color: #fff;
+  text-align: center;
+  padding: 2em 0;
+}
+/* 주소 및 저작권 공통 */
+.address {
+  font-style: normal;
+  margin-bottom: 1em;
+}
+.copyright {
+  font-size: 1em;
+}
+/* 모바일 디바이스 */
+@media screen and (max-width: 999px) {
+  body {
+    font-size: 1.6rem;
+  }
+  /* 모바일 컨테이너 */
+  .container{
+      position: relative;
+  }
+  /* 모바일 그리드 */
+  .grid-act{
+    width: 100%;
+    left: 0;
+    grid-template-columns: 0 repeat(4, 1fr) 0;
+  }
+  /* .grid-act::before, .grid-act::after{
+    content: "";
+  } */
+  /* 모바일 헤더 */
+  .header{
+      background: #38302e;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1em;
+  }
+  /* 모바일 로고 */
+  .logo{
+      margin: 0;
+      padding: .5em 0 .25em;
+  }
+  /* 모바일 멤버링크 */
+  .member{
+      background: #988574;
+      order: -1;
+      display: flex;
+      justify-content: flex-end;
+      color: #fff;
+      margin: 0 -1em;
+      padding: 0.35em 0;
+  }
+  .member a{
+      display: block;
+      padding: .5em 1em; 
+  }
+  .member a:hover, .member a:focus{
+      color: #ffc;
+  }
+  /* 모바일 검색 폼 */
+  .search fieldset{
+    padding: 0;
+  }
+  input[type="search"]{
+      width: calc(100% - 40px);
+      height: 30px;
+      border: 1px solid #666;
+      border-radius: 5px;
+      margin-right: 5px;
+      padding: 1px 1px 1px 1em;
+  }
+  .btn-search{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background: transparent;
+  }
+  .btn-search::after{
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      background: url("images/btn_search.png") no-repeat 0 0;
+      background-size: 100%;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      padding: 0;
+  }
+  /* 모바일 내비게이션 */
+  /* 모바일 메인메뉴 제어버튼 */
+  .btn-menubar{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 4.5em;
+      right: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      background: transparent;
+  }
+  .menubar{
+      background: #fff;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 20%;
+      transition: all 200ms;
+  }
+  .menubar-top{
+      top: 0;
+  }
+  .is-act .menubar-top{
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+  }
+  .menubar-middle{
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  .is-act .menubar-middle{
+      transform: translate(-100%, -50%);
+}
+  .menubar-bottom{
+      top: 100%;
+      transform: translateY(-100%);
+  }
+  .is-act .menubar-bottom{
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+}
+/* 모바일 메인 메뉴 */
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0,0,0,.85);
+    color: #fff;
+    width: 70vw;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: all 200ms;
+    padding: 50px;
+}
+.is-act .menu{
+    transform: translateX(0);
+}
+.menu-item{
+    display: block;
+    cursor: pointer;
+    padding: .5em 0;
+    margin: .5em 0;
+}
+.sub-menu{
+    display: none;
+    list-style-type: disc;
+    margin-left: 3em;
+}
+/* .sub-menu 부모 요소인 .menu-list에 menu-act 클래스가 추가되거나
+   .sub-menu 형제 요소인 .menu-item에 menu-item-act 클래스가 추가될 경우 */
+.menu-act .sub-menu,.menu-item-act + .sub-menu{
+  display: block;
+}
+.sub-menu a{
+    display: block;
+    padding: .5em 0;
+    margin: .5em 0;
+}
+/* 모바일 메인 콘텐츠 */
+.main{
+    padding: 0 20px;
+}
+/* 모바일 메인 제목 공통 */
+.main-section-heading{
+  margin: 1.5em 0 1em;
+}
+/* 모바일 추천 서적 */
+.recommend-book .recommend-book-summary{
+  margin-top: 1.25em;
+}
+/* 모바일 새소식 */
+.news .news-summary{
+  margin-top: 1.2em;
+}
+/* 모바일 게시판 */
+.board{
+  position: relative;
+}
+.board .board-list li{
+  margin-bottom: 1.2em;
+}
+.board-list li::before{
+  position: relative;
+  top: 0.15em;
+}
+/* 모바일 인기 사이트 */
+.favorite-site-heading{
+  margin: 2em 0 0.35em; 
+}
+.favorite-site-list{
+  margin-left: 0.2em;
+}
+/* 모바일 트위터 */
+.twitter{
+  margin-top: 1.5em;
+}
+/* 모바일 사용자 정보 */
+.twitter-user-info{
+  width: 65%;
+}
+/* 모바일 트위터 사용자 프로필 이미지 */
+.twitter-profile {
+  width: 30%;
+}
+/* 모바일 슬로건 */
+.slogan{
+    padding: 2em 20px 1em 20px;
+    line-height: 1.5;
+}
+/* 모바일 푸터 */
+.footer{
+  text-align: left;
+  padding: 20px;
+}
+.address span{
+    display: block;
+}
+}
+/* 데스크탑 디바이스 */
+@media screen and (min-width: 1000px) {
+  body {
+    font-size: 1.4rem;
+  }
+  /* 데스크탑 그리드 */
+  .grid-act{
+    width: 1000px;
+    left: 50%;
+    transform: translateX(-50%);
+    grid-template-columns: repeat(12, 1fr);
+  }
+  /* 데스크탑 레이아웃 공통 */
+  .header,
+  .main,
+  .slogan {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  /* 데스크탑 헤더 */
+  .header {
+    background-color: #fff;
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 30% 70%;
+    -ms-grid-rows: 50px 50px;
+    grid-template-columns: repeat(12, 65px);
+    grid-template-rows: 50px 50px;
+    grid-column-gap: 20px;
+  }
+
+  /* 데스크탑 로고 */
+  .logo {
+    margin: 0;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo a,
+  .logo img {
+    display: block;
+  }
+  /* 데스크탑 멤버 링크 */
+  .member {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-column: 10 / span 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .member li::before {
+    content: "|";
+  }
+  .member li:first-child::before {
+    content: "";
+  }
+  .member a {
+    padding: 0.5em 1em;
+  }
+  /* 데스크 탑 검색 폼 */
+  .search {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    grid-column: 7 / span 6;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .search fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  input[type="search"] {
+    height: 35px;
+    width: 400px;
+    padding: 2px 2px 2px 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    margin-right: 0.5em;
+  }
+  .btn-search {
+    height: 35px;
+    width: 50px;
+    padding: 5px;
+    color: #fff;
+    border: 1px solid #666;
+    background-color: #988574;
+    border-radius: 5px;
+  }
+  /* 데스크탑 내비게이션 */
+  .navigation {
+    padding: 0.5em 0 1.35em;
+    margin-top: 0.7em;
+    background-color: #988574;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+  /* 데스크탑 메인메뉴 */
+  .menu {
+    width: 1000px;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+  }
+  .menu span {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+    padding: 0.5em 0;
+    font-family: "Noto Sans Bold", sans-serif;
+    text-shadow: 0 1px 0 #000, 1px 0 0 #000, 0 -1px 0 #000, -1px 0 0 #000;
+  }
+  .menu a:hover,
+  .menu a:focus {
+    color: #ff0;
+  }
+  .sub-menu {
+    margin-top: 0.5em;
+  }
+  .sub-menu li {
+    margin: 0 0 0 1em;
+  }
+  .sub-menu a {
+    display: block;
+    padding: 0.5em 0;
+  }
+  /* 데스크탑 메인 콘텐츠 */
+  .main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px
+      20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px;
+    -ms-grid-rows: auto auto;
+    grid-template-columns: repeat(12, 65px);
+    grid-column-gap: 20px;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "book  book  book  book  news    news    news    news    news    news news news"
+      "board board board board twitter twitter twitter twitter twitter site site site";
+  }
+  /* 데스크탑 추천 서적 */
+  .recommend-book {
+    grid-area: book;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+  }
+  /* 데스크탑 새소식 */
+  .news {
+    grid-area: news;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 23;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+  }
+  /* 데스크탑 게시판 */
+  .board {
+    grid-area: board;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    position: relative;
+  }
+  /* 데스크탑 인기 사이트 */
+  .favorite-site {
+    grid-area: site;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 18;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+  }
+  /* 데스크탑 트위터 */
+  .twitter {
+    grid-area: twitter;
+    -ms-grid-column: 20;
+    -ms-grid-column-span: 23;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+  }
+  /* 데스크탑 슬로건 */
+  .slogan {
+    clear: both;
+    margin-top: 10px;
+    position: relative;
+  }
+  /* 데스크탑 슬로건 제목 */
+  .slogan-heading {
+    position: absolute;
+    bottom: -35px;
+    width: 110px;
+    height: 83px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slogan-heading::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("images/coffee.png") no-repeat;
+  }
+  /* 데스크탑 슬로건 본문 */
+  .slogan-content {
+    font-size: 1.6rem;
+    margin: 1em 5em 1em 10em;
+  }
+  .slogan-content q::before {
+    font-size: 5rem;
+    position: relative;
+    top: 2rem;
+  }
+  .slogan-content q::after {
+    content: "";
+  }
+}

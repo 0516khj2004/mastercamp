@@ -1,0 +1,29 @@
+@charset "utf-8";
+@import url('http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+@import url('./normalize.css');
+@import url('./reset.css');
+
+/* 기본 스타일 */
+html{
+  font-size: 10px;
+}
+body{
+  font-family:  'Spoqa Han Sans', 'Sans-serif';
+  font-weight: 400;
+  font-size: 1.4rem;
+  color:#181818;
+  background: #fff;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+/* a:link{
+ color: green;
+}
+a:visited{
+ color:gray;
+}
+a:hover, a:focus{
+ color: red;
+} */
