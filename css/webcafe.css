@@ -4,6 +4,9 @@
 @import url('./reset.css');
 
 /* 기본 스타일 */
+*, *::before, *::after{
+  box-sizing: border-box;
+}
 html{
   font-size: 10px;
 }
@@ -28,7 +31,55 @@ a:hover, a:focus{
  color: red;
 } */
 /* 공동스타일  */
-
+/* 레이블 숨기기 위함 --존재하지만  안보임 */
+legend,.a11y-hidden{
+  position: absolute;
+  background: blue;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  margin: -1px;
+}
+/* 스몰 스타일  */
+@media screen and (max-width: 319px){
+  .header{
+    background-color: #38302e;
+    color: #fff;
+    padding: 1em 1em;
+  }
+  .member{
+    margin: 1em 0;
+  }
+  input[type="search"]{
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    height: 30px;
+    padding: 2px 2px 2px 5px; /*안에 글자의 여백*/
+    width: calc(100% - 30px - 1em); /*버튼 가로,여백 크기를 뺀 크기*/
+    font-size: 1.4rem;
+    margin-right: 0.5em;
+  }
+  .btn-search{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    background:transparent;
+    font-size: 1.4rem;
+  }
+  .btn-search::after{
+    position: absolute;
+    top: 0; left: 0;
+    content: '';
+    background: url('./images/btn_search.png') no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    
+  }
+}
 /* 모바일 스타일  */
 @media screen and (min-width: 320px) and (max-width: 990px){
   /* 모바일 해더 */
@@ -63,13 +114,53 @@ a:hover, a:focus{
     color: #ffff00
   }
   /* 모바일 로고 */
-  .vt{
-    vertical-align: top;
+  .logo {
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
   .logo img{
+    vertical-align: top;
+  }
+  /* 모바일 검색 폼 */
+  .search-form{
+    /* background: #ffff00; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+ 
+  }
+  .search-form fieldset{
+    font-size: 0;
+  }
+  input[type="search"]{
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    height: 30px;
+    padding: 2px 2px 2px 5px; /*안에 글자의 여백*/
+    width: calc(100% - 30px - 1em); /*버튼 가로,여백 크기를 뺀 크기*/
+    font-size: 1.4rem;
+    margin-right: 1em;
+  }
+  .btn-search{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    background:transparent;
+    font-size: 1.4rem;
+  }
+  .btn-search::after{
+    position: absolute;
+    top: 0; left: 0;
+    content: '';
+    background: url('./images/btn_search.png') no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
     
   }
 }
+
 /* 데스크탑 스타일  */
 @media screen and(min-widht: 1000px){
 
