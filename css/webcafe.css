@@ -27,3 +27,28 @@ a:visited{
 a:hover, a:focus{
  color: red;
 } */
+/* 공동스타일  */
+
+/* 모바일 스타일  */
+@media screen and (min-width: 320px) and (max-width: 990px){
+  /* 모바일 해더 */
+  .header{
+    background-color: #38302e;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .logo, .member ,.search-form{
+    width: 100%;
+  }
+  /*모바일 멤버 */
+  .member{
+    background-color: #988574;
+    order: -1;
+  }
+}
+/* 데스크탑 스타일  */
+@media screen and(min-widht: 1000px){
+
+}
