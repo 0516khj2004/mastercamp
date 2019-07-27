@@ -41,11 +41,33 @@ a:hover, a:focus{
   }
   .logo, .member ,.search-form{
     width: 100%;
+    padding-left:20px;
+    padding-right: 20px;
   }
   /*모바일 멤버 */
   .member{
     background-color: #988574;
     order: -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  .member a{
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-right: -1em;
+  }
+  .member a:hover, .member a:focus{
+    color: #ffff00
+  }
+  /* 모바일 로고 */
+  .vt{
+    vertical-align: top;
+  }
+  .logo img{
+    
   }
 }
 /* 데스크탑 스타일  */
