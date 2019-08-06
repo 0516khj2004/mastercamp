@@ -165,10 +165,14 @@ legend,.a11y-hidden{
 
 /* 데스크탑 스타일  */
 @media screen and (min-width: 1000px){
+  /* 데스크탑 레이아웃 */
+  .header, .menu{
+    width: 1000px;
+    margin-left:auto;
+    margin-right: auto
+  }
   /* 데스크탑 해더 */
   .header{
-    width: 1000px;
-    margin:0 auto;
     position: relative;
   }
   /* 데스크탑 로고 */
@@ -222,4 +226,41 @@ legend,.a11y-hidden{
   /* .btn-search:hover, .btn-search:focus{
     border-radius: 0px 15px 0px 15px;
   } */
+  /* 데스크탑 네비게이션 */
+  .navigation{
+    background: #988574;
+    /* box-shadow: 0 -2px 0px 5px 0px #000000, 0 2px 5px 0px #000000; */
+    border-top: 2px solid #181818;
+    border-bottom: 2px solid #181818;
+  }
+  .menu{
+    /* width: 1000px;
+    margin: 0 auto; */
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    /* overflow:auto; */
+    color: #fff;
+  }
+  .clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .menu-list{
+    float: left;
+    /* width: 200px; */
+  }
+  .menu-list:nth-child(n+2){
+    margin-left: 60px;
+  }
+  .menu-item{
+    font-size: 1.8em;
+    text-shadow: 0 1px 0 #000,1px 0 0 #000,0 -1px 0 #000,-1px 0 0 #000;
+  }
+  .sub-menu{
+    margin: 1em;
+  }
+  .sub-menu li{
+    margin-bottom: 1em;
+  }
 }
