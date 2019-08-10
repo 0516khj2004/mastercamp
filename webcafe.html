@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>웹카페</title>
     <link rel="stylesheet" href="css/webcafe.css" />
+    <script src="./js/jquery.min.js" defer></script>
+    <script src="./js/webcafe.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
@@ -44,7 +46,12 @@
         </form>
       </header>
       <nav class="navigation">
-        <h2 class="a11y-hidden">메뉴</h2>
+        <h2 class="a11y-hidden">메인 메뉴</h2>
+        <button class="btn-menubar" title="메뉴 열기" aria-lable="메뉴 열기">
+          <span class="menubar menubar-top"></span>
+          <span class="menubar menubar-middle"></span>
+          <span class="menubar menubar-bottom"></span>
+        </button>
         <ul class="menu clearfix">
           <li class="menu-list">
             <span class="menu-item">HTML에 대해</span>

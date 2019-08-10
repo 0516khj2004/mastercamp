@@ -2,6 +2,7 @@
 @import url('http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
 @import url('./normalize.css');
 @import url('./reset.css');
+@import url('./fonts.css');
 
 /* 기본 스타일 */
 *, *::before, *::after{
@@ -159,8 +160,95 @@ legend,.a11y-hidden{
     background-size: 100%;
     width: 100%;
     height: 100%;
-    
   }
+  /* 모바일 네비게이션 */
+  .navigation{
+    background: blue;
+  }
+  /* 모바일 메뉴 제어 버튼 */
+  .btn-menubar{
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding:0;
+    position: absolute;
+    top: 7rem;
+    right: 20px;
+  }
+  .is-act .btn-menubar{
+    overflow: hidden;
+  }
+  .menubar{
+    background: #fff;
+    width: 100%;
+    height: 22%;
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+    /* transition-property: transform, background, top;
+    transition-duration: 500ms,1000ms,500ms;
+    transition-delay: 0s, 500ms, 1000ms;
+    transition-timing-function: ease-in-out; */
+  }
+
+  .menubar-top{
+    top: 0;
+  }
+  .is-act .menubar-top{
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .menubar-middle{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .is-act .menubar-middle{
+    transform: translate(-100%, -50%);
+  }
+  .menubar-bottom{
+    top: 100%;
+    transform: translateY(-100%);
+  }
+  .is-act .menubar-bottom{
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  /* 모바일 메인 메뉴 */
+  .menu{
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    position: fixed;
+    width: 70vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.2s;
+    padding: 1.5em;
+  }
+  .is-act .menu{
+    transform: translateX(0);
+  }
+  .menu-item{
+    margin: 1em 0;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .sub-menu{
+    display: none;
+    margin-left: 2em;
+    list-style: circle;
+  }
+  .menu-act .sub-menu{
+    display: block;
+  }
+  .sub-menu li{
+    margin-bottom: 0.5em;
+  }
+  
+
 }
 
 /* 데스크탑 스타일  */
@@ -233,6 +321,9 @@ legend,.a11y-hidden{
     border-top: 2px solid #181818;
     border-bottom: 2px solid #181818;
   }
+  .btn-menubar{
+    display: none;
+  }
   .menu{
     /* width: 1000px;
     margin: 0 auto; */
@@ -255,6 +346,7 @@ legend,.a11y-hidden{
   }
   .menu-item{
     font-size: 1.8em;
+    font-weight: 700;
     text-shadow: 0 1px 0 #000,1px 0 0 #000,0 -1px 0 #000,-1px 0 0 #000;
   }
   .sub-menu{
