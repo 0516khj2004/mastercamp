@@ -41,6 +41,35 @@ legend,.a11y-hidden{
   clip: rect(0,0,0,0);
   margin: -1px;
 }
+.resposive-wrap{
+  display: grid;
+  /* grid-template-columns: 50%;
+  justify-content: center; */
+}
+.responsive{
+  max-width: 100%;
+  height: auto;
+}
+/* 공동  추천서적 */
+.recommend-book-cover{
+  justify-self: center;
+  text-align: center;
+}
+.recommend-book-detail{
+  text-align: center;
+}
+.recommend-book-author,.recommend-book-author-name{
+  display: inline;
+}
+.recommend-book-grade{
+  font-size: 2rem;
+}
+.recommend-book-grade [class^="icon"]{
+  margin-left: -0.5em;
+  color: #abd375;
+}
+
+
 /* 스몰 스타일  */
 @media screen and (max-width: 319px){
   .header{
@@ -247,17 +276,20 @@ legend,.a11y-hidden{
   .sub-menu li{
     margin-bottom: 0.5em;
   }
-  
+  /* 모바일 추천 서적 */
+  .recommend-book-cover{
+    width: 50%;
+  }
 
 }
 
 /* 데스크탑 스타일  */
 @media screen and (min-width: 1000px){
   /* 데스크탑 레이아웃 */
-  .header, .menu{
+  .header, .menu, .main{
     width: 1000px;
     margin-left:auto;
-    margin-right: auto
+    margin-right: auto;
   }
   /* 데스크탑 해더 */
   .header{
@@ -354,5 +386,72 @@ legend,.a11y-hidden{
   }
   .sub-menu li{
     margin-bottom: 1em;
+  }
+  /* 데스크탑 메인 컨텐츠 */
+  .main{
+    background: yellow;
+    display: grid;
+    height: 600px;
+    grid-template-columns: repeat(12, 65px);
+    /* grid-column-gap: 20px;  */
+    grid-template-rows: auto auto;
+
+    grid-template-areas: "book book book book news news news news news news news news"
+                         "board board board board twitter twitter twitter twitter twitter favorite favorite favorite";
+    /* justify-items: center;
+    align-items: center; */
+    justify-content: space-between;
+    align-content: stretch;
+  }
+  /* 추천서적 */
+  .recommend-book{
+    /* grid-column-start: 1;
+    grid-column-end: 5; */
+    /* grid-column: 1/5; */
+    grid-area: book;
+    background: pink;
+  }
+  /* 새소식 */
+  .news{
+    /* grid-column-start:5;
+    grid-column-end: 13; */
+    /* grid-column: 5/13; */
+    /* grid-area: 2/5/3/13; */
+    grid-area: news;
+    background: red;
+  }
+  /* 게시판 */
+  .board{
+    /* grid-column-start:1;
+    grid-column-end: 5; */
+    /* grid-column: 1/5; */
+    grid-area: board;
+    background: gray;
+  }
+  /* 인기 사이트 */
+  .favorite-site{
+    /* grid-column-start:10;
+    grid-column-end: 13; */
+    /* grid-area: 1/10/2/13; */
+    grid-area: favorite;
+    background:blue;
+  }
+  /* 트위터 */
+  .twitter
+  {
+    /* grid-row-start: 2;
+    grid-row-end: 3; */
+    /* grid-row: 2/3; */
+    /* grid-column-start:5;
+    grid-column-end: 10; */
+    /* grid-column: 5/10; */
+    /* grid-area: 2/5/3/10; */
+    /* grid-area: 1/5/2/10; */
+    grid-area: twitter;
+    background: orange;
+  }
+  /* 데스크탑 추천 서적 */
+  .recommend-book-cover{
+    width: 70%;
   }
 }
