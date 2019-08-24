@@ -50,7 +50,56 @@ legend,.a11y-hidden{
   max-width: 100%;
   height: auto;
 }
-/* 공동  추천서적 */
+/* 공통 메인 콘텐프 섹션 */
+.main-content{
+  margin-top: 1em;
+}
+/* 공통 메인 콘텐츠 제목 */
+.main-content-heading{
+  background: url("./images/sprite_main.png") no-repeat;
+  min-height: 60px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding-left: 65px;
+  margin: 1em 0 1.5em;
+}
+.en-heading{
+  display: block;
+  text-transform: capitalize;
+}
+.recommend-book-heading .en-heading{
+  color: #abd375;
+}
+.news-heading{
+  background-position: 0 -230px;
+}
+.news-heading .en-heading{
+  color: #e8ca68;
+}
+.board-heading{
+  background-position: 0 -115px;
+}
+.board-heading .en-heading{
+  color: #c7b39a;
+}
+.favorite-site-heading{
+  background-position: 0 -345px;
+}
+.favorite-site-heading .en-heading{
+  color: #eea60a;
+}
+.twitter-heading{
+  background-position: 0 -460px;
+}
+.twitter-heading .en-heading{
+  color: #6aaee6;
+}
+/* 공통 메인 콘텐츠 단락 */
+.main [class*="summary"]{
+  margin-top: 10px;
+  line-height: 1.5;
+}
+/* 공통 추천서적 */
 .recommend-book-cover{
   justify-self: center;
   text-align: center;
@@ -68,7 +117,11 @@ legend,.a11y-hidden{
   margin-left: -0.5em;
   color: #abd375;
 }
-
+/* 공통 새소식 */
+.news-date{
+  display: block;
+  text-align: right;
+}
 
 /* 스몰 스타일  */
 @media screen and (max-width: 319px){
@@ -389,7 +442,6 @@ legend,.a11y-hidden{
   }
   /* 데스크탑 메인 컨텐츠 */
   .main{
-    background: yellow;
     display: grid;
     height: 600px;
     grid-template-columns: repeat(12, 65px);
@@ -409,7 +461,6 @@ legend,.a11y-hidden{
     grid-column-end: 5; */
     /* grid-column: 1/5; */
     grid-area: book;
-    background: pink;
   }
   /* 새소식 */
   .news{
@@ -418,7 +469,6 @@ legend,.a11y-hidden{
     /* grid-column: 5/13; */
     /* grid-area: 2/5/3/13; */
     grid-area: news;
-    background: red;
   }
   /* 게시판 */
   .board{
@@ -426,7 +476,6 @@ legend,.a11y-hidden{
     grid-column-end: 5; */
     /* grid-column: 1/5; */
     grid-area: board;
-    background: gray;
   }
   /* 인기 사이트 */
   .favorite-site{
@@ -434,7 +483,6 @@ legend,.a11y-hidden{
     grid-column-end: 13; */
     /* grid-area: 1/10/2/13; */
     grid-area: favorite;
-    background:blue;
   }
   /* 트위터 */
   .twitter
@@ -448,7 +496,6 @@ legend,.a11y-hidden{
     /* grid-area: 2/5/3/10; */
     /* grid-area: 1/5/2/10; */
     grid-area: twitter;
-    background: orange;
   }
   /* 데스크탑 추천 서적 */
   .recommend-book-cover{

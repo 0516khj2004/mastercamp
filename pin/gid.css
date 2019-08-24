@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.responsive{
+  max-width: 100%;
+  height: auto;
+}
+.cotainer{
+  max-width: 1000px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 20px
+}
+.card{
+  border: 1px solid #333333;
+  padding: 10px;
+}
+.card-span-1{
+  grid-row-end: span 1;
+}
+.card-span-2{
+  grid-row-end: span 2;
+}
+.card-span-3{
+  grid-row-end: span 3;
+}

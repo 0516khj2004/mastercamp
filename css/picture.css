@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.wrapper{
+  background:yellow;
+  width: 50%;
+}
+.responsive{
+  max-width: 100%;
+  height: auto;
+}
